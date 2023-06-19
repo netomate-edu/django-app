@@ -11,8 +11,9 @@
 <body>
     <a href="{% url 'index' %}">View todos</a>
     <h1>Add Todo:</h1>
-    <form action="">
-        <input type="text" name="task">
+    <form action="{% url 'add_todo' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="todo">
         <input type="submit">
     </form>
 </body>

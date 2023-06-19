@@ -15,6 +15,12 @@
         ul>li {
             padding: 10px;
         }
+
+        ul>li>a {
+            text-decoration: none;
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -24,7 +30,7 @@
     <h1>Todo App</h1>
     <ul>
         {% for todo in todos %}
-        <li>{{ todo }}</li>
+        <li>{{ todo.todo_item }} &nbsp; &nbsp; <a href="{% url 'remove_todo' todo.id %}">delete</a></li>
         {% endfor %}
     </ul>
 </body>
